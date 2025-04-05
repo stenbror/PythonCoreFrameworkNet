@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PythonCoreFramework", "PythonCoreFramework\PythonCoreFramework.csproj", "{ACACF790-5465-499F-A989-4498E0810689}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPythonCoreFramework", "TestPythonCoreFramework\TestPythonCoreFramework.csproj", "{37A8EAF7-E07F-4A33-AB44-15324D594389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACACF790-5465-499F-A989-4498E0810689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACACF790-5465-499F-A989-4498E0810689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACACF790-5465-499F-A989-4498E0810689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACACF790-5465-499F-A989-4498E0810689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A8EAF7-E07F-4A33-AB44-15324D594389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A8EAF7-E07F-4A33-AB44-15324D594389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A8EAF7-E07F-4A33-AB44-15324D594389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A8EAF7-E07F-4A33-AB44-15324D594389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
