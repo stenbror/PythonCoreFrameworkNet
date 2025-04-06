@@ -1,5 +1,6 @@
 ﻿using PythonCoreFramework.Parser.Tokens.Delimiters;
 using PythonCoreFramework.Parser.Tokens.Keywords;
+using PythonCoreFramework.Parser.Tokens.Literals;
 using PythonCoreFramework.Parser.Tokens.Operators;
 
 namespace TestPythonCoreFramework;
@@ -874,5 +875,15 @@ public class ParserTokens
         Assert.Equal(3u, symbol.End);
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("ShiftRightAssignToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void LiteralName()
+    {
+        var symbol = new LiteralNameTokenNode(0, 8, [], "__init__");
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(8u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("NameToken( [ 0..8 ] : '__init__' )", symbol.ToString());
     }
 }
