@@ -914,4 +914,26 @@ public class ParserTokens
         Assert.Equal([], symbol2.Trivia);
         Assert.Equal("StringToken( [ 0..15 ] : [ StringElementToken( [ 0..15 ] : 'Hello, World!' ) ] )", symbol2.ToString());
     }
+    
+    [Fact]
+    public void EndOfFile()
+    {
+        var symbol = new DelimiterEndOfFileTokenNode(0, [] );
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(0u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("EndOfFileToken( [ 0 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void NewLineToken()
+    {
+        var symbol = new DelimiterNewlineTokenNode(0, 2, [], '\r','\n' );
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal('\r', symbol.First);
+        Assert.Equal('\n', symbol.Second);
+        Assert.Equal("NewlineToken( [ 0..2 ] )", symbol.ToString());
+    }
 }
