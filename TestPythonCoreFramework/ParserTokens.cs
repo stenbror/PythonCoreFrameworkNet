@@ -113,4 +113,24 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("ContinueToken( [ 0..8 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void ReservedKeywordDef()
+    {
+        var symbol = new KeywordDefTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("DefToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordDel()
+    {
+        var symbol = new KeywordDelTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("DelToken( [ 0..3 ] )", symbol.ToString());
+    }
 }
