@@ -133,4 +133,34 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("DelToken( [ 0..3 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void ReservedKeywordElif()
+    {
+        var symbol = new KeywordElifTokenNode(0, 4, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(4u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ElifToken( [ 0..4 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordElse()
+    {
+        var symbol = new KeywordElseTokenNode(0, 4, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(4u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ElseToken( [ 0..4 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordExcept()
+    {
+        var symbol = new KeywordExceptTokenNode(0, 6, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(6u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ExceptToken( [ 0..6 ] )", symbol.ToString());
+    }
 }
