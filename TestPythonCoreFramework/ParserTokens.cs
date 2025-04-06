@@ -494,4 +494,54 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("ShiftRightToken( [ 0..2 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void OperatorAnd()
+    {
+        var symbol = new OperatorAndTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseAndToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorOr()
+    {
+        var symbol = new OperatorOrTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseOrToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorXor()
+    {
+        var symbol = new OperatorXorTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseXorToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorNot()
+    {
+        var symbol = new OperatorNotTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseNotToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorAssign()
+    {
+        var symbol = new OperatorAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("AssignToken( [ 0..2 ] )", symbol.ToString());
+    }
 }
