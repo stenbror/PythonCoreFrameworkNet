@@ -243,4 +243,54 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("ImportToken( [ 0..6 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void ReservedKeywordLambda()
+    {
+        var symbol = new KeywordLambdaTokenNode(0, 6, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(6u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("LambdaToken( [ 0..6 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordNonlocal()
+    {
+        var symbol = new KeywordNonlocalTokenNode(0, 8, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(8u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("NonlocalToken( [ 0..8 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordNot()
+    {
+        var symbol = new KeywordNotTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("NotToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordOr()
+    {
+        var symbol = new KeywordOrTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("OrToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordPass()
+    {
+        var symbol = new KeywordPassTokenNode(0, 4, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(4u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("PassToken( [ 0..4 ] )", symbol.ToString());
+    }
 }
