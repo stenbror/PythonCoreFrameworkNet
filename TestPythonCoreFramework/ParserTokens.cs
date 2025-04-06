@@ -293,4 +293,64 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("PassToken( [ 0..4 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void ReservedKeywordRaise()
+    {
+        var symbol = new KeywordRaiseTokenNode(0, 5, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(5u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("RaiseToken( [ 0..5 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordReturn()
+    {
+        var symbol = new KeywordReturnTokenNode(0, 6, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(6u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ReturnToken( [ 0..6 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordTry()
+    {
+        var symbol = new KeywordTryTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("TryToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordWhile()
+    {
+        var symbol = new KeywordWhileTokenNode(0, 5, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(5u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("WhileToken( [ 0..5 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordWith()
+    {
+        var symbol = new KeywordWithTokenNode(0, 4, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(4u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("WithToken( [ 0..4 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordYield()
+    {
+        var symbol = new KeywordYieldTokenNode(0, 5, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(5u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("YieldToken( [ 0..5 ] )", symbol.ToString());
+    }
 }
