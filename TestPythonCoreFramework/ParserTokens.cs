@@ -353,4 +353,44 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("YieldToken( [ 0..5 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void ReservedSoftKeywordMatch()
+    {
+        var symbol = new KeywordMatchTokenNode(0, 5, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(5u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("MatchToken( [ 0..5 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedSoftKeywordCase()
+    {
+        var symbol = new KeywordCaseTokenNode(0, 4, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(4u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("CaseToken( [ 0..4 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedSoftKeywordType()
+    {
+        var symbol = new KeywordTypeTokenNode(0, 4, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(4u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("TypeToken( [ 0..4 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedSoftKeywordDefault() // '_'
+    {
+        var symbol = new KeywordDefaultTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("DefaultToken( [ 0..1 ] )", symbol.ToString());
+    }
 }
