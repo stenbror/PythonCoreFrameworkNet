@@ -886,4 +886,14 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("NameToken( [ 0..8 ] : '__init__' )", symbol.ToString());
     }
+    
+    [Fact]
+    public void LiteralNumber()
+    {
+        var symbol = new LiteralNumberTokenNode(0, 8, [], "1.23e-45");
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(8u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("NumberToken( [ 0..8 ] : '1.23e-45' )", symbol.ToString());
+    }
 }
