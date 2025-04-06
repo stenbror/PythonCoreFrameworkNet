@@ -1,6 +1,6 @@
-namespace PythonCoreFramework.Parser.Tokens.Operators;
+namespace PythonCoreFramework.Parser.Tokens.Delimiters;
 
-public sealed class OperatorNotTokenNode(uint start, uint end, Trivia.Trivia[] trivia) : Token(start, end, trivia)
+public sealed class DelimiterNotTokenNode(uint start, uint end, Trivia.Trivia[] trivia) : Token(start, end, trivia)
 {
     public override string ToString()
     {

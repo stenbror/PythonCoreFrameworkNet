@@ -529,21 +529,21 @@ public class ParserTokens
     [Fact]
     public void OperatorNot()
     {
-        var symbol = new OperatorNotTokenNode(0, 1, []);
+        var symbol = new OperatorInvertTokenNode(0, 1, []);
         Assert.Equal(0u, symbol.Start);
         Assert.Equal(1u, symbol.End);
         Assert.Equal([], symbol.Trivia);
-        Assert.Equal("BitwiseNotToken( [ 0..1 ] )", symbol.ToString());
+        Assert.Equal("BitwiseInvertToken( [ 0..1 ] )", symbol.ToString());
     }
     
     [Fact]
     public void OperatorAssign()
     {
-        var symbol = new OperatorAssignTokenNode(0, 2, []);
+        var symbol = new OperatorColonAssignTokenNode(0, 2, []);
         Assert.Equal(0u, symbol.Start);
         Assert.Equal(2u, symbol.End);
         Assert.Equal([], symbol.Trivia);
-        Assert.Equal("AssignToken( [ 0..2 ] )", symbol.ToString());
+        Assert.Equal("ColonAssignToken( [ 0..2 ] )", symbol.ToString());
     }
     
     [Fact]
@@ -664,5 +664,75 @@ public class ParserTokens
         Assert.Equal(1u, symbol.End);
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("RightCurlyToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterAssign()
+    {
+        var symbol = new DelimiterAssignTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("AssignToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterColon()
+    {
+        var symbol = new DelimiterColonTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ColonToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterComma()
+    {
+        var symbol = new DelimiterCommaTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("CommaToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterEllipsis()
+    {
+        var symbol = new DelimiterEllipsisTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("EllipsisToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterNot()
+    {
+        var symbol = new DelimiterNotTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseNotToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterPeriod()
+    {
+        var symbol = new DelimiterPeriodTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("PeriodToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterSemicolon()
+    {
+        var symbol = new DelimiterSemicolonTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("SemicolonToken( [ 0..1 ] )", symbol.ToString());
     }
 }
