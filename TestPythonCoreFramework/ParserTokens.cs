@@ -1,4 +1,5 @@
 ﻿using PythonCoreFramework.Parser.Tokens.Keywords;
+using PythonCoreFramework.Parser.Tokens.Operators;
 
 namespace TestPythonCoreFramework;
 
@@ -392,5 +393,45 @@ public class ParserTokens
         Assert.Equal(1u, symbol.End);
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("DefaultToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorPlus()
+    {
+        var symbol = new OperatorPlusTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("PlusToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorMinus()
+    {
+        var symbol = new OperatorMinusTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("MinusToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorMul()
+    {
+        var symbol = new OperatorMulTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("MulToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorPower()
+    {
+        var symbol = new OperatorPowerTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("PowerToken( [ 0..2 ] )", symbol.ToString());
     }
 }

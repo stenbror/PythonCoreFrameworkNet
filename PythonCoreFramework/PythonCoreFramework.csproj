@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <Folder Include="Parser\AST\StatementNodes\" />
-      <Folder Include="Parser\Tokens\Operators\" />
     </ItemGroup>
 
 </Project>
