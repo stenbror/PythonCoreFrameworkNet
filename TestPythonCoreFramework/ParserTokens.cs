@@ -805,4 +805,74 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("PlusAssignToken( [ 0..2 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void DelimiterAndAssign()
+    {
+        var symbol = new DelimiterAndAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseAndAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterOrAssign()
+    {
+        var symbol = new DelimiterOrAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseOrAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterXorAssign()
+    {
+        var symbol = new DelimiterXorAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("BitwiseXorAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterMatricesAssign()
+    {
+        var symbol = new DelimiterMatricesAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("MatricesAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterPowerssign()
+    {
+        var symbol = new DelimiterPowerAssignTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("PowerAssignToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterShiftLeftAssign()
+    {
+        var symbol = new DelimiterShiftLeftAssignTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ShiftLeftAssignToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterShiftRightAssign()
+    {
+        var symbol = new DelimiterShiftRightAssignTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ShiftRightAssignToken( [ 0..3 ] )", symbol.ToString());
+    }
 }
