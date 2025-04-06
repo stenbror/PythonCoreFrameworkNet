@@ -735,4 +735,74 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("SemicolonToken( [ 0..1 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void DelimiterArrow()
+    {
+        var symbol = new DelimiterArrowTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ArrowToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterDivAssign()
+    {
+        var symbol = new DelimiterDivAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("DivAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterFloorDivAssign()
+    {
+        var symbol = new DelimiterFloorDivAssignTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("FloorDivAssignToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterMinusAssign()
+    {
+        var symbol = new DelimiterMinusAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("MinusAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterModuloAssign()
+    {
+        var symbol = new DelimiterModuloAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ModuloAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterMulAssign()
+    {
+        var symbol = new DelimiterMulAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("MulAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterPlusAssign()
+    {
+        var symbol = new DelimiterPlusAssignTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("PlusAssignToken( [ 0..2 ] )", symbol.ToString());
+    }
 }
