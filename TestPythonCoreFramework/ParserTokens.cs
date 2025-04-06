@@ -544,4 +544,64 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("AssignToken( [ 0..2 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void OperatorEqual()
+    {
+        var symbol = new OperatorEqualTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("EqualToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorNotEqual()
+    {
+        var symbol = new OperatorNotEqualTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("NotEqualToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorLessEqual()
+    {
+        var symbol = new OperatorLessEqualTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("LessEqualToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorGreaterEqual()
+    {
+        var symbol = new OperatorGreaterEqualTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("GreaterEqualToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorLess()
+    {
+        var symbol = new OperatorLessTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("LessToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorGreater()
+    {
+        var symbol = new OperatorGreaterTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("GreaterToken( [ 0..1 ] )", symbol.ToString());
+    }
 }
