@@ -896,4 +896,22 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("NumberToken( [ 0..8 ] : '1.23e-45' )", symbol.ToString());
     }
+    
+    [Fact]
+    public void LiteralStringSingle()
+    {
+        var symbol1 = new LiteralStringElementTokenNode(0, 15, [], "'Hello, World!'");
+        var symbol2 = new LiteralStringTokenNode(0, 15, []);
+        symbol2.AddElement(symbol1);
+        
+        Assert.Equal(0u, symbol1.Start);
+        Assert.Equal(15u, symbol1.End);
+        Assert.Equal([], symbol1.Trivia);
+        Assert.Equal("StringElementToken( [ 0..15 ] : 'Hello, World!' )", symbol1.ToString());
+        
+        Assert.Equal(0u, symbol2.Start);
+        Assert.Equal(15u, symbol2.End);
+        Assert.Equal([], symbol2.Trivia);
+        Assert.Equal("StringToken( [ 0..15 ] : [ StringElementToken( [ 0..15 ] : 'Hello, World!' ) ] )", symbol2.ToString());
+    }
 }
