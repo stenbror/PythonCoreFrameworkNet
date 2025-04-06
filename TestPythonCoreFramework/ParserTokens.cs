@@ -1,4 +1,5 @@
-﻿using PythonCoreFramework.Parser.Tokens.Keywords;
+﻿using PythonCoreFramework.Parser.Tokens.Delimiters;
+using PythonCoreFramework.Parser.Tokens.Keywords;
 using PythonCoreFramework.Parser.Tokens.Operators;
 
 namespace TestPythonCoreFramework;
@@ -603,5 +604,65 @@ public class ParserTokens
         Assert.Equal(1u, symbol.End);
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("GreaterToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterLeftParen()
+    {
+        var symbol = new DelimiterLeftParenTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("LeftParenToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterRightParen()
+    {
+        var symbol = new DelimiterRightParenTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("RightParenToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterLeftBracket()
+    {
+        var symbol = new DelimiterLeftBracketTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("LeftBracketToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterRightBracket()
+    {
+        var symbol = new DelimiterRightBracketTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("RightBracketToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterLeftCurly()
+    {
+        var symbol = new DelimiterLeftCurlyTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("LeftCurlyToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void DelimiterRightCurly()
+    {
+        var symbol = new DelimiterRightCurlyTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("RightCurlyToken( [ 0..1 ] )", symbol.ToString());
     }
 }
