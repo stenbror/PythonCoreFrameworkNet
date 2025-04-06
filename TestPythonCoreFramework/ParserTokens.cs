@@ -163,4 +163,44 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("ExceptToken( [ 0..6 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void ReservedKeywordFinally()
+    {
+        var symbol = new KeywordFinallyTokenNode(0, 7, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(7u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("FinallyToken( [ 0..7 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordFor()
+    {
+        var symbol = new KeywordForTokenNode(0, 3, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(3u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ForToken( [ 0..3 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordFrom()
+    {
+        var symbol = new KeywordFromTokenNode(0, 4, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(4u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("FromToken( [ 0..4 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void ReservedKeywordGlobal()
+    {
+        var symbol = new KeywordGlobalTokenNode(0, 6, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(6u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("GlobalToken( [ 0..6 ] )", symbol.ToString());
+    }
 }
