@@ -434,4 +434,64 @@ public class ParserTokens
         Assert.Equal([], symbol.Trivia);
         Assert.Equal("PowerToken( [ 0..2 ] )", symbol.ToString());
     }
+    
+    [Fact]
+    public void OperatorDiv()
+    {
+        var symbol = new OperatorDivTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("DivToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorFloorDiv()
+    {
+        var symbol = new OperatorFloorDivTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("FloorDivToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorMatrices()
+    {
+        var symbol = new OperatorMatricesTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("MatricesToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorModulo()
+    {
+        var symbol = new OperatorModuloTokenNode(0, 1, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(1u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ModuloToken( [ 0..1 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorShiftLeft()
+    {
+        var symbol = new OperatorShiftLeftTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ShiftLeftToken( [ 0..2 ] )", symbol.ToString());
+    }
+    
+    [Fact]
+    public void OperatorShiftRight()
+    {
+        var symbol = new OperatorShiftRightTokenNode(0, 2, []);
+        Assert.Equal(0u, symbol.Start);
+        Assert.Equal(2u, symbol.End);
+        Assert.Equal([], symbol.Trivia);
+        Assert.Equal("ShiftRightToken( [ 0..2 ] )", symbol.ToString());
+    }
 }
